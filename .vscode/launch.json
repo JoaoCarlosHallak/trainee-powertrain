@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EscuderiaIdeasApplication<escuderiaIdeas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.hallak.escuderiaIdeas.EscuderiaIdeasApplication",
+            "projectName": "escuderiaIdeas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

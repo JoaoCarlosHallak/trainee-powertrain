@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tubo primário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚙️ Calculadora de Tubo primário</h1>
+            <p class="subtitle">Escuderia Ideas</p>
+        </header>
+
+        <main>
+            <div class="card form-card">
+                <h2>Dados do Motor</h2>
+                <form id="exhaustForm">
+                    <div class="form-group">
+                        <label for="cc">
+                            Cilindrada (cc)
+                            <span class="tooltip" title="Deslocamento volumétrico do motor">?</span>
+                        </label>
+                        <input type="number" id="cc" name="cc" placeholder="Exemplo: 600" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rpm">
+                            RPM
+                            <span class="tooltip" title="Rotações por minuto máximo">?</span>
+                        </label>
+                        <input type="number" id="rpm" name="rpm" placeholder="Exemplo: 12000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="angulo">
+                            Ângulo da Válvula (BPMI)
+                            <span class="tooltip" title="Ângulo entre o comando de válvulas">?</span>
+                        </label>
+                        <input type="number" id="angulo" name="angulo" placeholder="Exemplo: 240" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="divergencia">
+                            Ângulo de Divergência
+                            <span class="tooltip" title="Ângulo de divergência do escapamento">?</span>
+                        </label>
+                        <input type="number" id="divergencia" name="divergencia" placeholder="Exemplo: 5.0" step="0.1" required>
+                    </div>
+
+                    <button type="submit" class="btn-calculate">Calcular Escapamento</button>
+                </form>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="card result-card">
+                    <h2>Dimensões Ideais Calculadas</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="label">Comprimento Primário Ideal</span>
+                            <span class="value" id="comprimentoPrimario">--</span>
+                            <span class="unit">mm</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Diâmetro Interno Primário Ideal</span>
+                            <span class="value" id="diametroPrimario">--</span>
+                            <span class="unit">mm</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Comprimento Secundário Ideal</span>
+                            <span class="value" id="comprimentoSecundario">--</span>
+                            <span class="unit">mm</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Comprimento Cone de Transição</span>
+                            <span class="value" id="comprimentoCone">--</span>
+                            <span class="unit">mm</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Razão de Expansão</span>
+                            <span class="value" id="razaoExpansao">--</span>
+                            <span class="unit"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card suggestion-card">
+                    <h2>Tubo Primário Comercial Sugerido</h2>
+                    <div class="suggestion-content">
+                        <div class="tube-name" id="tuboPrimarioNome">--</div>
+                        <div class="tube-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Diâmetro Externo</span>
+                                <span class="spec-value" id="primarioDiaExt">--</span>
+                                <span class="spec-unit">mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Diâmetro Interno</span>
+                                <span class="spec-value" id="primarioDiaInt">--</span>
+                                <span class="spec-unit">mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Espessura da Parede</span>
+                                <span class="spec-value" id="primarioEspessura">--</span>
+                                <span class="spec-unit">mm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card suggestion-card">
+                    <h2>Tubo Secundário Comercial Sugerido</h2>
+                    <div class="suggestion-content">
+                        <div class="tube-name" id="tuboSecundarioNome">--</div>
+                        <div class="tube-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Diâmetro Externo</span>
+                                <span class="spec-value" id="secundarioDiaExt">--</span>
+                                <span class="spec-unit">mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Diâmetro Interno</span>
+                                <span class="spec-value" id="secundarioDiaInt">--</span>
+                                <span class="spec-unit">mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Espessura da Parede</span>
+                                <span class="spec-value" id="secundarioEspessura">--</span>
+                                <span class="spec-unit">mm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-new-calc" onclick="resetForm()">Nova Consulta</button>
+            </div>
+
+            <div id="errorContainer" class="error-container hidden"></div>
+            <div id="loadingContainer" class="loading-container hidden">
+                <div class="spinner"></div>
+                <p>Calculando...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; Desenvolvido por Hallak</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
