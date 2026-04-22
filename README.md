@@ -161,3 +161,6 @@ Não considera:
 Temperatura variável
 Múltiplos cilindros
 Interação com abafador
+
+
+![alt text](image.png)
