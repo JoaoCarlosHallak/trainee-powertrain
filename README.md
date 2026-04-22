@@ -135,7 +135,7 @@ POST /api/escapamento/calcular
   "comprimentoIdealSecundarioMM": 650.22,
   "razaoExpansao": 1.15
 }
-
+```
 🧪 Como Executar
 Pré-requisitos
 - Java 21
@@ -162,5 +162,6 @@ Temperatura variável
 Múltiplos cilindros
 Interação com abafador
 
+---
 
 ![alt text](image.png)
