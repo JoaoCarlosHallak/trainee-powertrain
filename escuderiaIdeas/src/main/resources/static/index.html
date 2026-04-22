@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label for="rpm">
                             RPM
-                            <span class="tooltip" title="Rotações por minuto máximo">?</span>
+                            <span class="tooltip" title="Rotações por minuto cujo qual deseja otimizar">?</span>
                         </label>
                         <input type="number" id="rpm" name="rpm" placeholder="Exemplo: 12000" required>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <label for="angulo">
                             Ângulo da Válvula (BPMI)
-                            <span class="tooltip" title="Ângulo entre o comando de válvulas">?</span>
+                            <span class="tooltip" title="Ângulo do comando de válvulas antes do BPMI">?</span>
                         </label>
                         <input type="number" id="angulo" name="angulo" placeholder="Exemplo: 240" required>
                     </div>
@@ -44,12 +44,12 @@
                     <div class="form-group">
                         <label for="divergencia">
                             Ângulo de Divergência
-                            <span class="tooltip" title="Ângulo de divergência do escapamento">?</span>
+                            <span class="tooltip" title="Ângulo de divergência do degrau de transição">?</span>
                         </label>
                         <input type="number" id="divergencia" name="divergencia" placeholder="Exemplo: Entre 7 e 8 (Segundo Bell)" step="0.1" required>
                     </div>
 
-                    <button type="submit" class="btn-calculate">Calcular Escapamento</button>
+                    <button type="submit" class="btn-calculate">Calcular Sistema</button>
                 </form>
             </div>
 
